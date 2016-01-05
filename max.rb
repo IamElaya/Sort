@@ -1,6 +1,11 @@
 # Find the maximum 
 def maximum(arr)
-  arr.max
+
+  highest_number = ""
+
+  arr.each do |number|
+    if number >= highest_number
+      highest_number = number
 end
 
 # expect it to return 42 below
