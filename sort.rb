@@ -3,16 +3,16 @@ def sort(arr)
   #arr.sort
   
   sorted = false
-until sorted
-  sorted = true
-  for i in 0..(arr.length - 2)
-    if arr[i] > arr[i +1]
-      sorted = false
-      arr[i], arr[i + 1] = arr[i +1], arr[i]
+  until sorted
+    sorted = true
+    for i in 0..(arr.length - 2)
+      if arr[i] > arr[i +1]
+        sorted = false
+        arr[i], arr[i + 1] = arr[i +1], arr[i]
+      end
     end
   end
-end
-return arr
+  return arr
 end
 
 
