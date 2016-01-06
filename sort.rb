@@ -15,7 +15,6 @@ end
 return arr
 end
 
-end
 
 # Find the maximum 
 def maximum(arr)
