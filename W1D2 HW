@@ -1,0 +1,26 @@
+W1D2 HW
+Q1 Replace placeholders within a string with values they represent. 
+Q2 2 quotes let you use string interpolation
+Q3 removes the new line from gets
+Q4 Read-eval-print loop takes single user inputs, evaluate, and returns to them
+Q5 first one is not true
+Q6 weird syntax, need return?
+
+W1D3 HW
+Q1 Step execution into next line or method, whereas next is within same frame
+Q2 Select returns an array of all elements for which block is true, whereas detect is not false
+Q3 Returns a true value
+Q4 A mixin that provides collection classes with searching method and can sort.
+
+Inject example: hearts.inject(0) { |value, card| value + card[:value]} (0 = memo goes to first value, then goes to value of card. Return value goes in loop to next one and so on... last one is puts )
+  Same as eg. value = 0
+      hearts.each do |heart|
+      value += heart[:value]
+      end
+
+
+Select example: hearts = @cards.select do |card|
+card[:suit] == "hearts"
+end
+
+Reduce and inject same thing, reduce is V2.0 because it describes its function. 

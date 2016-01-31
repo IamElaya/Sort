@@ -1,0 +1,402 @@
+W1D2 HW
+Q1 Replace placeholders within a string with values they represent. 
+Q2 2 quotes let you use string interpolation
+Q3 removes the new line from gets
+Q4 Read-eval-print loop takes single user inputs, evaluate, and returns to them
+Q5 first one is not true
+Q6 weird syntax, need return?
+
+W1D3 HW
+Q1 Step execution into next line or method, whereas next is within same frame
+Q2 Select returns an array of all elements for which block is true, whereas detect is not false
+Q3 Returns a true value
+Q4 A mixin that provides collection classes with searching method and can sort.
+
+W1D6 HW
+Q1a. Instance variable can be called out in their instance.
+Q1b. The difference is that an instance can be called outside of where it's defined?
+
+
+Inject example: hearts.inject(0) { |value, card| value + card[:value]} (0 = memo goes to first value, then goes to value of card. Return value goes in loop to next one and so on... last one is puts )
+  Same as eg. value = 0
+      hearts.each do |heart|
+      value += heart[:value]
+      end
+
+
+Select example: hearts = @cards.select do |card|
+card[:suit] == "hearts"
+end
+
+Reduce and inject same thing, reduce is V2.0 because it describes its function. 
+
+Require relative gets filefrom same directory
+
+.ancestors basicobject.method
+
+W1D4 HW
+Q1 Class is overarching "blueprint", instance is object of the class with specific piece of data
+Q2 instance variable can be called anywhere in object but not global, local is defined within a method/block
+*Object is date with method to act on that data
+Q3 attr_accesssor creates getter variable, not instance till called first time (also attr_reader, attr_writer)
+Q4 Initialize is a method that sets up values that you will be using in the class
+Q5 computer = Computer.new
+
+W2D1 HW
+Q3 self is used to replace calling an instance or class variable 
+
+W3D1 HW
+Q1a Create: insert, Read: , Update: WHERE, Delete: WHERE
+1b Can delete only with seperate statements after joining
+Q2a uniquely identifies each record in a table
+2b. Have unique values and cannot have null
+2c. Most tables will have one and each table can only have one key
+3a. Join combines data from 2 tables that have some matching values
+b. Inner join is default
+c. Inner gives results of intersecting values, outer gives combined union values
+
+W3D3 HW
+1. Scale
+2. Inheritance, automatic attr reader
+3. Code is easier to maintain, SQL sux lel
+4. Activerecord is superior to its alternatives
+5. validations protect your data, there are validations happening on the SQL level (Constraints)
+6. Create is New + Save
+7. Bang throws an error, allows rescuing where we want to define a fallback behaviour 
+8. Different versions lel
+10. When we send the code to ruby from SQL
+11 .errors.any
+12.deleted from SQL but Ruby is there till Garbage collection(falls out of scope)
+13. callback is a method that runs in response to an event
+
+COnstructor method
+
+class Fruit
+attr_reader/writer/accesssor *depends : colour (everytime colour is referenced its to here, and allows subsequent changes), has_Seeds (allows outside access)
+
+def initialize(name, colour, has_seeds)
+  @name = name
+  @colour = colour
+  @has_seeds = has _seed 
+  end
+end
+
+
+Create instance variables of the local variables defined in initialize
+-If no initialize in class, goes up the hierarchy to find one 
+
+
+*Duckpunching
+
+def grow
+  if @ripe
+    @roten = true
+  end
+  unless @ripe
+    @ripe = true
+  end
+end
+
+def report
+    puts "I am ripe" if self.@ripe (or if ripe because automatically implies method, same as self)
+    puts "Iam rotten" if rotten
+  end
+end
+
+Self =  Reference to instance of an object from inside object
+
+Instance variable is not inherited through inheritance, unless they are in attr_*****
+
+Super() Finds method of same name and overwrites method if written in object
+  -If descending classes inherit from each other, Super overwrites previous inheritance and only inherits from the target
+
+  If creating variable in child class, need it in attr_reader otherwise nil.
+
+You can super a string like
+
+def gallop
+"#{super}", JUST NOT VERY QUICKLY"
+end
+end
+
+To make classes interact with each other 
+
+def race(horse)
+if @speed >= horse.speed
+puts "You win!"
+else
+puts "They win. Boo. :("
+end
+end
+
+In new classes have to reset intance variable
+
+eg. @speed = 5, so can overwrite the one in the class
+
+class variable are able to be accessable by every instance 
+Private methods can only be accssed wthin the class, whereas other methods are by default public
+
+Return random?-
+
+oruvate 
+de get)breed
+breeds = [rand(breeeeds.length)]
+end
+end 
+
+def buy_horse
+  breed = get_breed
+  gender = rand(100) > 50 ? "male": "female"
+  hands = rand(10) + 10
+  if breed == "shetland"
+  horse = shetland.new(gender)
+  else
+  if gender == "Female"
+  horse = Mare.new(breed, hands)
+  else
+  horse = Stallion.new(brands, hands)
+  end
+  end
+  @@horses << horse
+  end
+
+  Exception, code still slightly runs but shows error where it happens 
+
+  Handle the exception. Errors are objects
+
+  Stadard error most likely to be soon on a regular basis
+
+  You can make your own exception
+
+
+  class EmptyStableError < StandardError
+  end
+
+  raise EmptyStableError, "No horses!" if @@horses.empty?
+  @@horses
+
+  begin 
+  puts t_bar.horses
+  rescue EmptyStableError => e
+  puts "Whoa! #{e.message}"
+  end
+
+  -Run code that will trigger an exception 
+  -Prevent crashes that can be handled 
+
+  raise HorseTooShort "hands is #{hands} but must be at least 10" if hands < 10
+
+  class HorseTooShort <StandardError
+
+  To exception
+
+  define class
+  define raise: etc.... if x not true eg
+
+
+  Class Horse
+    class HorseTooShort < StandardError
+    end
+
+    class NoBreedError < StandardError
+    end
+
+  end
+
+  raise HorseTooShort, "hands is #{hands}, but must be at least 10" if hands < 10
+  raise NoBreedError, "horses must have a breed" if breed.nil?
+
+  t_bar = Stable.new
+
+  begin
+    t_bar_buy_horse
+    puts "The horse was bought"
+  Rescue Horse::TooShort   => e
+  puts "etc"
+  puts e.message
+  repeat for every error
+  end
+
+
+describe '.new' or '.create' refers to class variable
+
+READ TEST B4 WRITING CODE KK
+
+eg. full_nameable
+
+module Nameable
+
+  def first_name
+    name.split(" ").first
+  end
+
+class Mentor
+  include Nmeable
+  attr_reader :name, :bio, :picture_url
+
+  def initialize(name, bio = nil, picture_url = nil)
+    @name = name
+    @bio = bio
+    @picture_url = picture_url
+  end
+  
+end
+
+If repeated varibles, input/output
+
+attr writer only needed if writing outside the class
+
+
+Example refactor 
+
+BREAD_PRICES = {:wheat => 2, :white => 2.5}
+MEAT_PRICES = {:turkey => 1.5, ham => 2.0}
+
+
+def bread_prices
+  BREAD_PRICES[bread.to_sym]
+end
+
+def meat prices
+  MEAT_PRICES[meat.to_sym]
+end
+
+def toasted
+  puts ? 0.5 : 0
+end
+
+SELECT u.username, p.animal
+FROM users AS u
+JOIN pets AS p
+ON u.id = p.user_id
+
+AS creates alias
+
+ON defines which seperate values from the 2 tables are the same
+
+COmputers calculate time by using the epoch
+Calculates date from Jan 1970, in seconds and calculates current time and date
+
+Default stores keys by key in asceding order
+
+SELECT teams.name 
+FROM teams 
+JOIN players ON teams, id=players.tead_id 
+WHERE players.name='DANIEL SEDIN';
+
+ON TEST
+1. Manual sql 
+2. Ruby has methods that do it for u
+3. Employers wil ask you about SQL in tech interviews
+
+CRUD
+CREATE
+READ
+UPDATE
+DELETE
+
+UPSERT (update + insert) 
+
+NEVE EVER EVER NO MATTER WHAT WRITE AN UPDATE OR A DELETE QUERY WITHOUT A WHERE CLAUSE.
+
+OR SHIT HAPPENS XD!
+
+DELETE FROM STUDENTS WHERE ID=10 NOT DELETE FROM STUDENTS; 
+
+FOREIGN KEY IS THE MANY SIDE XD!
+
+eg
+SELECT authors.last_name, subjects.subject 
+FROM authors 
+JOIN books ON books.author_id = authors.id 
+JOIN subjects ON books.subject_id = subjects.id
+
+psql needs database to connect to
+
+
+TUPLE is an array with a specific length
+
+
+class Piano
+
+  attr_accessor :id, :make, :color, :price
+
+  def save
+  #we need a connection
+  #insert data into pianos table,
+  self.class.conn.exec_params('INSERT INTO pianos (make, color, price) VALUES (#{make}), #{colour}   
+
+  def self.create(make, color, price)
+    #insert date into pianos table
+    #get the id of the insrerted row
+    #return a piano instance with all that data
+  end
+
+  def self.conn
+  PG::Connection.open(dbname: 'pianos_app')
+
+end
+
+(make, color, price) VALUES ($1, $2, #3:decimal) instead of interpolating
+
+persisted? object is in the database
+
+ActiveRecord namin
+
+if running on an associated *thing* save it in the method
+
+Can put condition in the callback to return instance of class or NIL
+
+GET / HTTP/1.1 Both computers know how to communicate with each other
+Host(Header) Can have as many as you can, a hash?!
+
+require 'sinatra'
+.
+get '/' do 
+  'hello, world'
+end
+
+Same as GET /HTTP/1.1
+
+
+
+HTTP/1.1 200 OK
+200 is a status code
+eg 404 cannot be found
+number starts 2 = good
+3 = redirection
+4 = request received and understood but problem
+5 = server error
+
+Params = key values that came fromt the request
+
+
+get '/chairs/new' do
+  '<form><input name="type_of_wood' / x
+end
+
+post 'chairs' do
+  chair = {
+    kind_of_wood: params[:kind_of_wood]
+  }
+  DATABASE << chair
+  halt 201
+end
+
+<h1>Home Page</h1>
+
+if post, redirect
+
+Itempotent - similar to women pregnant can still have sex but not double pregnant ROFL, aka doing repetitions doenst increase output
+
+
+
+
+
+
+
+<img src='images/<%= card.url %>'>
+
+images/Aspade.svg
+
+

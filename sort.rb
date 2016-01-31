@@ -1,7 +1,21 @@
 # Sort the array from lowest to highest
 def sort(arr)
-  arr.sort
+  #arr.sort
+sorted = false
+until sorted
+  sorted = true
+  for i in 0..(arr.length - 2)
+    if arr[i] > arr[i +1]
+      sorted = false
+      arr[i], arr[i + 1] = arr[i +1], arr[i]
+    end
+  end
 end
+return arr
+end
+
+
+
 
 # Find the maximum 
 def maximum(arr)

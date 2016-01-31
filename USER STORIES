@@ -1,0 +1,37 @@
+USER STORIES
+
+USERS should be able to click the deck of cards and get a random card
+As a user
+I want to be able to get a random unpicked card on my turn
+As that will provide me with an excuse to get drunk
+
+Given that it's my turn
+When I tap the deck icon to get a card
+A new card will pop up 
+
+USERS should be able to know what each card does
+As a user
+I want to be able to know what rule the card I picked does
+So I will know what silly manner I will be getting drunk tonight to
+
+Given that I have picked a card
+It should present the rules to me 
+So I know how to proceed in the game
+
+USERS should be able to know what turn it is
+As a user
+I want to be able to know if it is my turn
+So I can get closer to being drunk
+
+Given that it is my turn
+I should be notified
+So I know to pick a card
+
+USERS should not be able to get a card that has already been drawn
+As a user
+I do not want to draw a card that has previously been played
+As that will reduce the authentic nature of the card game
+
+Given that I have picked a card
+It should be a completely new one 
+That has not been drawn yet in the game
